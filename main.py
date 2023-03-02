@@ -2,12 +2,6 @@ import sys
 import os
 import shutil
 
-connection_string_section = """
-"ConnectionStrings": {
-    "PlayTogetherDB": "Host=localhost;Database=playtogetherdb;Username=postgres;Password=postgres;Port=50000"
-  },
-"""
-
 def run(args: list[str]):
     project_path = args[0]
     try:
