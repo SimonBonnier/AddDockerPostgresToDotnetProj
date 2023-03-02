@@ -16,8 +16,6 @@ def run(args: list[str]):
 
     setup_database_project(current_path=current_path, project_path=project_path, project_name=project_name, framework=framework)
 
-    # TODO: Update README.MD
-
 def get_sln_file_name(project_path: str):
     files = os.listdir(project_path)
     for f in files:
@@ -71,11 +69,7 @@ def replace_placeholders_in_template_files(project_path: str, project_name: str)
 def replace_in_file(file_path: str, to_replace: str, replace_with: str):
     with open(file_path, 'r') as file :
         filedata = file.read()
-
-        # Replace the target string
         filedata = filedata.replace(to_replace, replace_with)
-
-        # Write the file out again
         with open(file_path, 'w') as file:
             file.write(filedata)
 
@@ -94,5 +88,4 @@ if __name__ == '__main__':
         print('need to provide project path')
 
     run(sys.argv[1:])
-
-# Test path: C:\Users\Simon\source\python\add-docker-postgresdb-support-for-dotnet-project\Test
+    
